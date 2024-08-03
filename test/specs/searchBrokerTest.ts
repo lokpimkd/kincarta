@@ -20,7 +20,7 @@ describe('Yavlena broker page', () => {
             await searchBrokerPage.searchBrokerByName(newList[i].name);
             console.log('Searching name: ' + newList[i].name);
 
-            numberOfResults = await searchBrokerPage.brokerNameCards.length;
+            numberOfResults = await searchBrokerPage.brokerCards.length;
             await searchBrokerPage.getButtonByText('Details').click();
 
             //This is implemented because there are rare occurrences where there are more than one brokers
@@ -31,8 +31,8 @@ describe('Yavlena broker page', () => {
                 await expect(numberOfResults).toEqual(1);
             }
 
-            const allPropertiesDisplayed = await searchBrokerPage.checkAllPropertiesDisplayed(await searchBrokerPage.brokerNameCards);
-            await expect(allPropertiesDisplayed).toBe(true);
+            const assertAllDetailsOfBroker = await searchBrokerPage.verifyAllDetailsOfBroker(await searchBrokerPage.brokerCards);
+            await expect(assertAllDetailsOfBroker).toBe(true);
 
             await searchBrokerPage.getButtonByText('Clear').click();
             await browser.pause(1000);

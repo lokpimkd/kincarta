@@ -19,11 +19,11 @@ class SearchBrokerPage extends BasePage {
         return $('.MuiGrid-container>.MuiGrid-item>.MuiPaper-root>.MuiCardContent-root>.MuiBox-root>.MuiCollapse-root>.MuiCollapse-wrapper>.MuiCollapse-wrapperInner>div:last-of-type>a:nth-of-type(2)');
     }
 
-    public get brokerNameCards() {
+    public get brokerCards() {
         return $$('.MuiGrid-container>.MuiGrid-item');
     }
 
-    public async checkAllPropertiesDisplayed(elements: WebdriverIO.ElementArray) {
+    public async verifyAllDetailsOfBroker(elements: WebdriverIO.ElementArray) {
         const propertiesLocator = `//a[contains(text(), "properties")]`;
         const addressLocator = '//span[contains(text(), " / ")]';
 

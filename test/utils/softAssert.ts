@@ -12,7 +12,7 @@ class SoftAssert {
             const element = await $(selector);
             const isPresent = await element.isExisting();
             this.assert(isPresent, message);
-            console.log(await element.getText());
+            console.log('Mobile phone of broker is: ' + await element.getText());
         } catch (error) {
             this.errors.push(`Error checking element presence for element, "${message}"`);
         }
