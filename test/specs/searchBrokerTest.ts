@@ -14,7 +14,10 @@ describe('Yavlena broker page', () => {
         let numberOfResults = null;
         const brokerList = await searchBrokerPage.brokerNamesList;
         const newList = searchBrokerPage.checkNameUniqueness(await searchBrokerPage.brokerNamesList.map(elem => elem.getText()));
-        console.log('List of all brokers:\n' + newList);
+        console.log('Names of all brokers:');
+        for (let i = 0; i < brokerList.length; i++) {
+            console.log(newList[i].name);
+        }
 
         for (let i = 0; i < brokerList.length; i++) {
             await searchBrokerPage.searchBrokerByName(newList[i].name);
