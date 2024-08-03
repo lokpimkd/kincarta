@@ -57,7 +57,7 @@ class SearchBrokerPage extends BasePage {
         await browser.keys('Enter');
         await browser.pause(1000);
         //The browser.pause is not ideal but the DOM is being rendered very slowly when searching in the ag-grid
-        //and this was the only solution all other waitFor are not working here
+        //and this was the only solution all other waitFor are not working here, increment if still failing
     }
 
     public checkNameUniqueness(names: string[]): { name: string, isUnique: boolean }[] {

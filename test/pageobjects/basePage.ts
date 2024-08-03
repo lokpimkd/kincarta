@@ -1,6 +1,5 @@
 import {$, browser} from '@wdio/globals'
 
-
 export default class BasePage {
     public open(path: string) {
         return browser.url(`https://www.yavlena.com/en/${path}`);
@@ -32,5 +31,4 @@ export default class BasePage {
         const xpath = `//button[contains(text(), "${text}")]`;
         return $(xpath);
     }
-
 }
