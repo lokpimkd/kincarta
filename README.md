@@ -58,7 +58,7 @@ To run tests, run the following command
 
 ## Known Limitations
 
-When a change of result is happening in the ag-grid in scenarios such as showing the results after a broken is searched, or clearing the results the DOM of the page is being updated very slowly. The only way to handle this was with `browser.pause()` which is not ideal, but the functions from WebdriverIO such as `waitFor...` were not helpfull and were returning the incorect element state.
+When a change of result is happening in the MuiGrid in scenarios such as showing the results after a broken is searched, or clearing the results the DOM of the page is being updated very slowly. The only way to handle this was with `browser.pause()` which is not ideal, but the functions from WebdriverIO such as `waitFor...` were not helpfull and were returning the incorect element state.
 In rare cases were test might fail on your local machine because of this increment the browser pause a bit
 
 ## Test Results
